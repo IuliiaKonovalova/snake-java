@@ -82,11 +82,13 @@ public class OptionMenu extends Account {
 		switch (selectionCheckingAccount) {
 		case 1:
 			// get checking balance
+      System.out.println("Checking Account Balance: " + moneyFormat.format(getCheckingBalance()));
 			getAccountType();
 			break;
 		case 2:
 			System.out.println("Checking Withdraw Funds: ");
 			// get checking withdraw funds
+			getCheckingWithdrawInput();
 			getAccountType();
 			break;
 		case 3:

@@ -35,4 +35,8 @@ public class Account {
   double getCheckingBalance() {
 		return checkingBalance;
 	}
+
+  public double getSavingBalance() {
+		return savingBalance;
+	}
 }
