@@ -30,7 +30,7 @@ public class OptionMenu extends Account {
           setCustomerNumber(enteredCustomerNumber);
           setPinNumber(enteredPinNumber);
           // open options:
-          
+          getAccountTypeMenu();
         } else {
           System.out.println("\n" + "Wrong Customer Number or Pin Number" + "\n");
         }
@@ -39,6 +39,32 @@ public class OptionMenu extends Account {
         menuInput.nextLine();
       }
     } while (true);
+  }
 
+  public void getAccountTypeMenu() {
+
+    System.out.println("Select the account you want to access!");
+		System.out.println("Type 1: Checking Account");
+		System.out.println("Type 2: Saving Account");
+		System.out.println("Type 3: Exit");
+		System.out.println("Choice: ");
+
+    selectedAccountType = menuInput.nextInt();
+
+    switch (selectedAccountType) {
+      case 1:
+        // get checking account:
+        break;
+      case 2:
+        // get saving account:
+        break;
+      case 3:
+        // exit:
+        System.out.println("Thank you for using this ATM, see you soon!");
+        break;
+      default:
+        System.out.println("Invalid Choice." + "\n");
+        getAccountType();
+    }
   }
 }
