@@ -31,4 +31,8 @@ public class Account {
   public int getPinNumber(in pinNumber) {
     return pinNumber;
   }
+
+  double getCheckingBalance() {
+		return checkingBalance;
+	}
 }
