@@ -3,7 +3,7 @@ import java.util.Scanner;
 import java.text.DecimalFormat;
 
 
-public class OptionMenu {
+public class OptionMenu extends Account {
 
   Scanner menuInput = new Scanner(System.in);
   DecimalFormat moneyFormat = new DecimalFormat("'$'###,##0.00");
@@ -26,7 +26,11 @@ public class OptionMenu {
         int enteredPinNumber = menuInput.nextInt();
 
         if (data.containsKey(enteredCustomerNumber) && data.containsKey(enteredCustomerNumber).equals(enteredPinNumber)) {
-          // Set customer account number and pin number + open options
+          // Set customer account number and pin number
+          setCustomerNumber(enteredCustomerNumber);
+          setPinNumber(enteredPinNumber);
+          // open options:
+          
         } else {
           System.out.println("\n" + "Wrong Customer Number or Pin Number" + "\n");
         }

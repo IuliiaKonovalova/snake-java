@@ -9,10 +9,26 @@ public class Account {
   DecimalFormat moneyFormat = new DecimalFormat("'$'###,##0.00");
 
   private int customerNumber;
-  private int PinNumber;
+  private int pinNumber;
 
   private double checkingBalance = 0;
   private double savingBalance = 0;
 
-  
+  public int setCustomerNumber(int customerNumber) {
+    this.customerNumber = customerNumber;
+    return customerNumber;
+  }
+
+  public int getCustomerNumber(int customerNumber) {
+    return customerNumber;
+  }
+
+  public int setPinNumber(int pinNumber) {
+    this.pinNumber = pinNumber;
+    return pinNumber;
+  }
+
+  public int getPinNumber(in pinNumber) {
+    return pinNumber;
+  }
 }
