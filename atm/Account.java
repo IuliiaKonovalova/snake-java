@@ -32,6 +32,7 @@ public class Account {
     return pinNumber;
   }
 
+  // Checking Account Operations 
   double getCheckingBalance() {
     return checkingBalance;
   }
@@ -39,6 +40,11 @@ public class Account {
 
   public double calcCheckingWithdraw(double amount) {
     checkingBalance = (checkingBalance - amount);
+    return checkingBalance;
+  }
+
+  public double calcCheckingDeposit(double amount) {
+    checkingBalance = (checkingBalance + amount);
     return checkingBalance;
   }
 
@@ -69,6 +75,7 @@ public class Account {
     }
   }
 
+  // Saving Account operations
   public double getSavingBalance() {
     return savingBalance;
   }
@@ -78,8 +85,8 @@ public class Account {
     return savingBalance;
   }
 
-  public double calcCheckingDeposit(double amount) {
-    checkingBalance = (checkingBalance + amount);
+  public double calcSavingDeposit(double amount) {
+    savingBalance = (savingBalance + amount);
     return savingBalance;
   }
 }
