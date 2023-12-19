@@ -126,13 +126,13 @@ public class OptionMenu extends Account {
     case 2:
       System.out.println("Saving Withdraw Funds: ");
       // get Saving withdraw funds
-
+      getSavingWithdrawInput()
       getAccountType();
       break;
     case 3:
       System.out.println("Saving Deposit Funds: ");
       // get Saving deposit
-
+      getSavingDepositInput();
       getAccountType();
       break;
     case 4:

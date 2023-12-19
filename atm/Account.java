@@ -102,4 +102,16 @@ public class Account {
       System.out.println("Not enough money" + "\n");
     }
   }
+
+  public void getSavingDepositInput() {
+    System.out.println("Checking Saving Account Balance: " + moneyFormat.format(checkingBalance) + "\n");
+    System.out.println("Amount you want to deposit to Checking Account: ");
+    double amount = input.nextDouble();
+    if ((getSavingBalance() + amount) >= 0) {
+      calcCheckingDeposit(amount);
+      System.out.println("New Saving Account balance: " + moneyFormat.format(checkingBalance));
+    } else {
+      System.out.println("Balance cannot be negative" + "\n");
+    }
+  }
 }
