@@ -72,4 +72,9 @@ public class Account {
   public double getSavingBalance() {
     return savingBalance;
   }
+
+  public double calcSavingWithdraw(double amount) {
+    savingBalance = (savingBalance - amount);
+    return savingBalance;
+  }
 }
