@@ -70,7 +70,7 @@ public class OptionMenu extends Account {
   }
 
   public void getCheckingAccount() {
-    System.out.println("Checking account! Select options:");
+    System.out.println("Checking Account! Select options:");
     System.out.println("Type 1: View Balance");
     System.out.println("Type 2: Withdraw Funds");
     System.out.println("Type 3: Deposit Funds");
@@ -107,5 +107,41 @@ public class OptionMenu extends Account {
     }
   }
 
+  public void getSavingAccount() {
+    System.out.println("Saving Account! Select options:");
+    System.out.println("Type 1: View Balance");
+    System.out.println("Type 2: Withdraw Funds");
+    System.out.println("Type 3: Deposit Funds");
+    System.out.println("Type 4: Exit");
+    System.out.println("Choice: ");
 
+    int selectionSavingAccount = menuInput.nextInt();
+
+    switch (selectionSavingAccount) {
+    case 1:
+      // get Saving balance
+      System.out.println("Saving Account Balance: " + moneyFormat.format(getCheckingBalance()));
+      getAccountType();
+      break;
+    case 2:
+      System.out.println("Saving Withdraw Funds: ");
+      // get Saving withdraw funds
+
+      getAccountType();
+      break;
+    case 3:
+      System.out.println("Saving Deposit Funds: ");
+      // get Saving deposit
+
+      getAccountType();
+      break;
+    case 4:
+      System.out.println("Operation with Saving Account is ending...");
+      getAccountType();
+      break;
+    default:
+      System.out.println("Invalid Choice." + "\n");
+      getChecking();
+    }
+  }
 }
