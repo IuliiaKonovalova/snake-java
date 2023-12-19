@@ -77,4 +77,9 @@ public class Account {
     savingBalance = (savingBalance - amount);
     return savingBalance;
   }
+
+  public double calcCheckingDeposit(double amount) {
+    checkingBalance = (checkingBalance + amount);
+    return savingBalance;
+  }
 }
