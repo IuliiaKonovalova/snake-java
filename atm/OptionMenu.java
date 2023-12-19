@@ -71,38 +71,41 @@ public class OptionMenu extends Account {
 
   public void getCheckingAccount() {
     System.out.println("Checking account! Select options:");
-		System.out.println("Type 1: View Balance");
-		System.out.println("Type 2: Withdraw Funds");
-		System.out.println("Type 3: Deposit Funds");
-		System.out.println("Type 4: Exit");
-		System.out.println("Choice: ");
+    System.out.println("Type 1: View Balance");
+    System.out.println("Type 2: Withdraw Funds");
+    System.out.println("Type 3: Deposit Funds");
+    System.out.println("Type 4: Exit");
+    System.out.println("Choice: ");
 
     int selectionCheckingAccount = menuInput.nextInt();
-		
-		switch (selectionCheckingAccount) {
-		case 1:
-			// get checking balance
+
+    switch (selectionCheckingAccount) {
+    case 1:
+      // get checking balance
       System.out.println("Checking Account Balance: " + moneyFormat.format(getCheckingBalance()));
-			getAccountType();
-			break;
-		case 2:
-			System.out.println("Checking Withdraw Funds: ");
-			// get checking withdraw funds
-			getCheckingWithdrawInput();
-			getAccountType();
-			break;
-		case 3:
-			System.out.println("Checking Deposit Funds: ");
-			// get checking deposit
-			getAccountType();
-			break;
-		case 4:
-			System.out.println("Operation with Checking account is ending...");
-			getAccountType();
-			break;
-		default:
-			System.out.println("Invalid Choice." + "\n");
-			getChecking();
-		}
+      getAccountType();
+      break;
+    case 2:
+      System.out.println("Checking Withdraw Funds: ");
+      // get checking withdraw funds
+      getCheckingWithdrawInput();
+      getAccountType();
+      break;
+    case 3:
+      System.out.println("Checking Deposit Funds: ");
+      // get checking deposit
+      getCheckingDepositInput();
+      getAccountType();
+      break;
+    case 4:
+      System.out.println("Operation with Checking account is ending...");
+      getAccountType();
+      break;
+    default:
+      System.out.println("Invalid Choice." + "\n");
+      getChecking();
+    }
   }
+
+
 }

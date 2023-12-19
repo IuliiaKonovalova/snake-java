@@ -33,28 +33,43 @@ public class Account {
   }
 
   double getCheckingBalance() {
-		return checkingBalance;
-	}
+    return checkingBalance;
+  }
 
-  public double getSavingBalance() {
-		return savingBalance;
-	}
 
-	public double calcCheckingWithdraw(double amount) {
-		checkingBalance = (checkingBalance - amount);
-		return checkingBalance;
-	}
+  public double calcCheckingWithdraw(double amount) {
+    checkingBalance = (checkingBalance - amount);
+    return checkingBalance;
+  }
 
   public void getCheckingWithdrawInput() {
-		System.out.println("Checking Account Balance: " + moneyFormat.format(checkingBalance) + "\n");
-		System.out.println("Amount you want to withdraw from Checking Account: ");
-		double amount = input.nextDouble();
-		
-		if ((checkingBalance - amount) >= 0) {
-			calcCheckingWithdraw(amount);
-			System.out.println("New Checking Account balance: " + moneyFormat.format(checkingBalance));
-		} else {
-			System.out.println("Not enough money" + "\n");
-		}
-	}
+    System.out.println("Checking Account Balance: " + moneyFormat.format(checkingBalance) + "\n");
+    System.out.println("Amount you want to withdraw from Checking Account: ");
+    double amount = input.nextDouble();
+
+    if ((checkingBalance - amount) >= 0) {
+      calcCheckingWithdraw(amount);
+      System.out.println("New Checking Account balance: " + moneyFormat.format(checkingBalance));
+    } else {
+      System.out.println("Not enough money" + "\n");
+    }
+  }
+
+  public void getCheckingDepositInput() {
+    System.out.println("Checking Deposit Account Balance: " + moneyFormat.format(checkingBalance) + "\n");
+    System.out.println("Amount you want to deposit to Checking Account: ");
+
+    double amount = input.nextDouble();
+
+    if ((checkingBalance + amount) >= 0) {
+      calcCheckingDeposit(amount);
+      System.out.println("New Checking Account balance: " + moneyFormat.format(checkingBalance));
+    } else {
+      System.out.println("Balance cannot be negative" + "\n");
+    }
+  }
+
+  public double getSavingBalance() {
+    return savingBalance;
+  }
 }
