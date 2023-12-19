@@ -89,4 +89,17 @@ public class Account {
     savingBalance = (savingBalance + amount);
     return savingBalance;
   }
+
+  public void getSavingWithdrawInput() {
+    System.out.println("Checking Saving Account Balance: " + moneyFormat.format(savingBalance) + "\n");
+    System.out.println("Amount you want to withdraw from Saving Account: ");
+    double amount = input.nextDouble();
+    
+    if ((savingBalance - amount) >= 0) {
+      calcSavingWithdraw(amount);
+      System.out.println("New Saving Account balance: " + moneyFormat.format(savingBalance));
+    } else {
+      System.out.println("Not enough money" + "\n");
+    }
+  }
 }
