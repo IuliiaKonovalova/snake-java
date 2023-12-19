@@ -28,7 +28,7 @@ public class Account {
     return pinNumber;
   }
 
-  public int getPinNumber(in pinNumber) {
+  public int getPinNumber(int pinNumber) {
     return pinNumber;
   }
 

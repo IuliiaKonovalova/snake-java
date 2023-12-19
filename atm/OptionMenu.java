@@ -1,7 +1,7 @@
 import java.io.IOException;
 import java.util.Scanner;
 import java.text.DecimalFormat;
-
+import java.util.HashMap;
 
 public class OptionMenu extends Account {
 
@@ -25,7 +25,7 @@ public class OptionMenu extends Account {
         System.out.println("Enter your Pin Number: ");
         int enteredPinNumber = menuInput.nextInt();
 
-        if (data.containsKey(enteredCustomerNumber) && data.containsKey(enteredCustomerNumber).equals(enteredPinNumber)) {
+        if (data.containsKey(enteredCustomerNumber) && data.get(enteredCustomerNumber).equals(enteredPinNumber)) {
           // Set customer account number and pin number
           setCustomerNumber(enteredCustomerNumber);
           setPinNumber(enteredPinNumber);
@@ -49,7 +49,7 @@ public class OptionMenu extends Account {
 		System.out.println("Type 3: Exit");
 		System.out.println("Choice: ");
 
-    selectedAccountType = menuInput.nextInt();
+    int selectedAccountType = menuInput.nextInt();
 
     switch (selectedAccountType) {
       case 1:
@@ -65,7 +65,7 @@ public class OptionMenu extends Account {
         break;
       default:
         System.out.println("Invalid Choice." + "\n");
-        getAccountType();
+        getAccountTypeMenu();
     }
   }
 
@@ -83,27 +83,27 @@ public class OptionMenu extends Account {
     case 1:
       // get checking balance
       System.out.println("Checking Account Balance: " + moneyFormat.format(getCheckingBalance()));
-      getAccountType();
+      getAccountTypeMenu();
       break;
     case 2:
       System.out.println("Checking Withdraw Funds: ");
       // get checking withdraw funds
       getCheckingWithdrawInput();
-      getAccountType();
+      getAccountTypeMenu();
       break;
     case 3:
       System.out.println("Checking Deposit Funds: ");
       // get checking deposit
       getCheckingDepositInput();
-      getAccountType();
+      getAccountTypeMenu();
       break;
     case 4:
       System.out.println("Operation with Checking account is ending...");
-      getAccountType();
+      getAccountTypeMenu();
       break;
     default:
       System.out.println("Invalid Choice." + "\n");
-      getChecking();
+      getCheckingAccount();
     }
   }
 
@@ -121,27 +121,27 @@ public class OptionMenu extends Account {
     case 1:
       // get Saving balance
       System.out.println("Saving Account Balance: " + moneyFormat.format(getCheckingBalance()));
-      getAccountType();
+      getAccountTypeMenu();
       break;
     case 2:
       System.out.println("Saving Withdraw Funds: ");
       // get Saving withdraw funds
-      getSavingWithdrawInput()
-      getAccountType();
+      getSavingWithdrawInput();
+      getAccountTypeMenu();
       break;
     case 3:
       System.out.println("Saving Deposit Funds: ");
       // get Saving deposit
       getSavingDepositInput();
-      getAccountType();
+      getAccountTypeMenu();
       break;
     case 4:
       System.out.println("Operation with Saving Account is ending...");
-      getAccountType();
+      getAccountTypeMenu();
       break;
     default:
       System.out.println("Invalid Choice." + "\n");
-      getChecking();
+      getSavingAccount();
     }
   }
 }
