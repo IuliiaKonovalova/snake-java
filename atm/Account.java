@@ -45,5 +45,16 @@ public class Account {
 		return checkingBalance;
 	}
 
-  
+  public void getCheckingWithdrawInput() {
+		System.out.println("Checking Account Balance: " + moneyFormat.format(checkingBalance) + "\n");
+		System.out.println("Amount you want to withdraw from Checking Account: ");
+		double amount = input.nextDouble();
+		
+		if ((checkingBalance - amount) >= 0) {
+			calcCheckingWithdraw(amount);
+			System.out.println("New Checking Account balance: " + moneyFormat.format(checkingBalance));
+		} else {
+			System.out.println("Not enough money" + "\n");
+		}
+	}
 }
