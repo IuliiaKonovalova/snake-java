@@ -39,4 +39,11 @@ public class Account {
   public double getSavingBalance() {
 		return savingBalance;
 	}
+
+	public double calcCheckingWithdraw(double amount) {
+		checkingBalance = (checkingBalance - amount);
+		return checkingBalance;
+	}
+
+  
 }
